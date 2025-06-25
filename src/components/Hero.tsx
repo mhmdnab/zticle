@@ -3,6 +3,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import logo from "../../public/images/logoREVERSENOBG.png";
 
 export default function HeroSection() {
   return (
@@ -17,8 +18,11 @@ export default function HeroSection() {
       />
 
       <div className="relative z-10 max-w-2xl px-4">
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-          Welcome to Zticle
+        <h1 className="flex items-center justify-center text-4xl md:text-5xl font-bold text-white mb-6">
+          <span>Welcome to</span>
+          <span className="ml-4 inline-flex items-center">
+            <Image src={logo} alt="ArticleHub logo" width={115} height={115} />
+          </span>
         </h1>
         <p className="text-lg text-gray-200 mb-6">
           Your daily source for in-depth articles on web development, design,

@@ -18,7 +18,6 @@ export default function AboutPage() {
         <div className="absolute top-10 left-5 w-20 h-20 bg-white/20 rounded-full animate-pulse"></div>
         <div className="absolute bottom-10 right-10 w-32 h-32 bg-white/10 rounded-full"></div>
       </section>
-
       {/* Mission & Vision with angled cards */}
       <section className="flex flex-col md:flex-row mx-4 md:mx-12 gap-6 my-12">
         <div className="relative flex-1 bg-[#B1D8B7] p-8 rounded-2xl shadow-lg hover:rotate-1 transition-transform">
@@ -40,7 +39,6 @@ export default function AboutPage() {
           </p>
         </div>
       </section>
-
       {/* Team Section with fun hover pop */}
       <section className="bg-[#2F5233] text-white py-12 px-6 text-center">
         <h2 className="text-3xl font-semibold mb-6">Meet the Founders</h2>
