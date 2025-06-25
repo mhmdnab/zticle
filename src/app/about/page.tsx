@@ -40,6 +40,28 @@ export default function AboutPage() {
           </p>
         </div>
       </section>
+
+      {/* Team Section with fun hover pop */}
+      <section className="bg-[#2F5233] text-white py-12 px-6 text-center">
+        <h2 className="text-3xl font-semibold mb-6">Meet the Founders</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-xl mx-auto">
+          {["Mohamad", "Adam"].map((name) => (
+            <div
+              key={name}
+              className="relative bg-white text-[#2F5233] p-6 rounded-xl shadow-xl hover:scale-105 transition-transform"
+            >
+              <div className="h-32 w-32 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center text-3xl">
+                {name.charAt(0)}
+              </div>
+              <h3 className="text-xl font-medium mb-1">{name} Naboulsi</h3>
+              <p className="italic text-sm">Co-Founder</p>
+              <span className="absolute top-2 right-2 text-xl opacity-20">
+                ⭐
+              </span>
+            </div>
+          ))}
+        </div>
+      </section>
     </>
   );
 }

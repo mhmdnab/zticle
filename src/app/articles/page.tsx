@@ -4,7 +4,7 @@
 import { useState } from "react";
 import Link from "next/link";
 
-// Sample data – replace with real fetch in production
+// Sample data – replace with real fetch in production //py-21.75
 const sampleArticles = [
   {
     id: 1,
