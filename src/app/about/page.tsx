@@ -6,7 +6,7 @@ export default function AboutPage() {
       <section className="relative overflow-hidden text-center py-21.75 px-6">
         <div className="absolute inset-0 bg-gradient-to-br from-[#76B947] to-[#94C973] mix-blend-multiply opacity-90" />
         <div className="relative z-10 max-w-2xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             About Zticle
           </h1>
           <p className="text-lg md:text-xl text-gray-100">
