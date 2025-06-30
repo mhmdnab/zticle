@@ -10,9 +10,9 @@ export default function AboutTeaser() {
         About Zticle
       </h2>
       <p className="text-[#2F5233] mb-6 max-w-prose mx-auto">
-        Zticle is your go-to destination for insightful small articles on web
-        development, design, and the latest in tech trends. We help developers
-        stay ahead with expert guides and community insights.
+        Zticle is your go-to micro-mag for all things web dev, design, and hot
+        tech drops. Think bite-sized guides, pro tips, and community
+        hacks—served Gen Z style. Stay ahead of the curve without the fluff.
       </p>
       <Link
         href="/about"

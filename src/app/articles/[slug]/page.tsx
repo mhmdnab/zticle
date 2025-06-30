@@ -1,31 +1,23 @@
+// app/articles/[slug]/page.jsx
 import { notFound } from "next/navigation";
-import { articles } from "../../../data/articles";
 import Image from "next/image";
-
-interface Props {
-  params: { slug: string };
-}
+import { articles } from "../../../data/articles";
 
 export function generateStaticParams() {
-  return articles.map((a) => ({ slug: a.slug }));
+  return articles.map((article) => ({
+    slug: article.slug,
+  }));
 }
 
-export default async function ArticlePage({ params }: Props) {
+export default async function ArticlePage({ params }: any) {
   const article = articles.find((a) => a.slug === params.slug);
-  if (!article) notFound();
-  //   #94C973
+  if (!article) {
+    notFound();
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-tr from-[#94C973] to-[#4c8453] py-12 px-4">
-      <div
-        className="
-      max-w-2xl mx-auto
-      bg-white/80
-      rounded-3xl overflow-hidden
-      shadow-lg
-      border-2 border-[#76B947]
-    "
-      >
+      <div className="max-w-2xl mx-auto bg-white/80 rounded-3xl overflow-hidden shadow-lg border-2 border-[#76B947]">
         {/* Header strip */}
         <div className="px-8 py-6 bg-[#76B947]/30">
           <h1 className="text-4xl font-bold text-[#2F5233]">{article.title}</h1>

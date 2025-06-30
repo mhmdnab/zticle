@@ -16,7 +16,7 @@ export const articles: Article[] = [
     description:
       "Gen Z’s no-BS guide to spotting burnout, setting boundaries, and reclaiming your time.",
     publishedAt: "2025-06-26",
-    coverImage: "/images/burnout.jpg",
+    coverImage: "/images/burnout.png",
     author: "Jordan Lee",
     html: `
       <h2>Say “Bye” to Hustle Porn</h2>
@@ -51,7 +51,7 @@ export const articles: Article[] = [
     description:
       "A zero-fluff intro to crypto investing—what to know, what to avoid, and how to stay sane.",
     publishedAt: "2025-06-24",
-    coverImage: "/images/crypto.jpg",
+    coverImage: "/images/crypto.png",
     author: "Avery Kim",
     html: `
       <h2>Forget the Moon—Think Safety First</h2>
@@ -80,7 +80,7 @@ export const articles: Article[] = [
     description:
       "Tiny daily habits that move the needle on your mood—no therapist required (but helpful!).",
     publishedAt: "2025-06-23",
-    coverImage: "/images/mental-health.jpg",
+    coverImage: "/images/mental-health.png",
     author: "Riley Patel",
     html: `
       <h2>Micro-Habits, Macro Impact</h2>
@@ -118,7 +118,7 @@ export const articles: Article[] = [
     description:
       "A side-by-side of the two biggest scrolls—features, culture, and where you belong.",
     publishedAt: "2025-06-21",
-    coverImage: "/images/social-media.jpg",
+    coverImage: "/images/social-media.png",
     author: "Samira Ali",
     html: `
       <h2>Swipe, Scroll, Repeat</h2>
@@ -151,7 +151,7 @@ export const articles: Article[] = [
     description:
       "How Gen Z is redefining work: remote, four-day weeks, passion projects, and more.",
     publishedAt: "2025-06-20",
-    coverImage: "/images/career.jpg",
+    coverImage: "/images/career.png",
     author: "Kai Nguyen",
     html: `
       <h2>Work Less, Live More</h2>

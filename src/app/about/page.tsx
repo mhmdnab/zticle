@@ -10,8 +10,11 @@ export default function AboutPage() {
             About Zticle
           </h1>
           <p className="text-lg md:text-xl text-gray-100">
-            We’re passionate about sharing high-octane insights on web
-            development, design, and tech trends—because learning should be fun!
+            We’re the Gen Z newsroom that keeps it real—no corporate fluff, no
+            jargon. Zticle is your daily scroll of micro-articles on culture,
+            tech, mental health, hustle hacks and hot takes. We speak your
+            language (TikTok energy included) and serve up bite-sized reads that
+            stick.
           </p>
         </div>
         {/* Floating circles */}
@@ -25,8 +28,10 @@ export default function AboutPage() {
             Our Mission
           </h2>
           <p className="text-[#2F5233]">
-            To deliver high-quality, accessible content that empowers developers
-            of all levels to grow their skills—and have fun along the way.
+            To equip every twenty-something with high-voltage insights and zero
+            BS. We craft snackable, scroll-ready content that helps you level up
+            your life and career—while having fun on the way. Learn fast, think
+            sharp, live loud.
           </p>
         </div>
         <div className="relative flex-1 bg-[#94C973] p-8 rounded-2xl shadow-lg hover:-rotate-1 transition-transform">
@@ -34,14 +39,17 @@ export default function AboutPage() {
             Our Vision
           </h2>
           <p className="text-[#2F5233]">
-            To become the go-to playground for web tech tutorials, fostering a
-            vibrant, supportive community that loves to learn.
+            A world where learning doesn’t feel like homework. We want Zticle to
+            be the digital hangout for Gen Z creators, rebels, and curious
+            minds—where every click feels like chatting with your smartest
+            friend. Together, we build a community that’s bold, supportive, and
+            forever curious.
           </p>
         </div>
       </section>
       {/* Team Section with fun hover pop */}
       <section className="bg-[#2F5233] text-white py-12 px-6 text-center">
-        <h2 className="text-3xl font-semibold mb-6">Meet the Founders</h2>
+        <h2 className="text-3xl font-semibold mb-6">Meet the Authors</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-xl mx-auto">
           {["Mohamad", "Adam"].map((name) => (
             <div
