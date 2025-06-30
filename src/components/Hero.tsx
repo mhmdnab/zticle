@@ -10,7 +10,7 @@ export default function HeroSection() {
     <section className="relative text-center h-screen flex flex-col justify-center items-center">
       {/* Background Image */}
       <Image
-        src={"/images/herobg.png"}
+        src={"/images/herobg2.png"}
         alt="Hero background"
         fill
         className="object-cover"
