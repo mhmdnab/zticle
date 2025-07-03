@@ -26,8 +26,12 @@ export default function ContactPage() {
       {/* Form container */}
       <div className="relative max-w-2xl mx-auto bg-white rounded-2xl shadow-2xl p-8">
         <h1 className="text-3xl font-bold text-[#2F5233] mb-6 text-center">
-          Get in Touch
+          Your Turn... Say Hi
         </h1>
+        <p className="text-sm text-[#4a584c] mb-12 text-center">
+          Got a hot take, feedback, or meme to share? We’re all ears—hit us up
+          and join the convo!
+        </p>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label
@@ -78,6 +82,7 @@ export default function ContactPage() {
               onChange={handleChange}
               required
               rows={5}
+              placeholder="wassup..."
               className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#8BCD50]"
             />
           </div>

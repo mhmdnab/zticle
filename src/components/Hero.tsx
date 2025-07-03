@@ -18,15 +18,15 @@ export default function HeroSection() {
       />
 
       <div className="relative z-10 max-w-2xl px-4">
-        <h1 className="flex items-center justify-center text-4xl md:text-5xl font-bold text-white mb-6">
-          <span>Welcome to</span>
+        <h1 className="flex items-center justify-center text-3xl md:text-4xl font-bold text-white mb-6">
+          <span>Hey Gen Z, Welcome to </span>
           <span className="ml-4 inline-flex items-center">
-            <Image src={logo} alt="ArticleHub logo" width={115} height={115} />
+            <Image src={logo} alt="ArticleHub logo" width={98} height={98} />
           </span>
         </h1>
         <p className="text-lg text-gray-200 mb-6">
-          Your daily source for in-depth articles on web development, design,
-          and tech trends.
+          All the web wisdom, life hacks, and glow-up guides you’ll ever need.
+          No cringe. Just good vibes.
         </p>
         <Link
           href="/articles"
