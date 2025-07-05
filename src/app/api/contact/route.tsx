@@ -16,18 +16,17 @@ export async function POST(req: Request) {
     const mailOptions = {
       from: email,
       to: process.env.EMAIL_RECEIVER,
-      subject: `New Portfolio Inquiry from ${name}`,
+      subject: `${name} sent you a message via ZTICLE`,
       text: `
-You have received a new message through your portfolio contact form.
+
 
 Name: ${name}
 Email: ${email}
 
-Message:
+------------
+
 ${message}
 
----
-This message was submitted via your personal website.
   `.trim(),
     };
 

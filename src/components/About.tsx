@@ -3,7 +3,7 @@
 
 import Link from "next/link";
 
-export default function AboutTeaser() {
+export default function About() {
   return (
     <section className="bg-[#B1D8B7] py-12 px-4 sm:px-6 md:px-12 text-center rounded-xl md:max-w-4xl max-w-96 mx-auto my-16">
       <h2 className="text-2xl font-semibold text-[#2F5233] mb-4">
