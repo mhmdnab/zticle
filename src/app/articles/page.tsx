@@ -11,7 +11,7 @@ export default function ArticlesPage() {
   );
 
   return (
-    <main className="relative min-h-screen py-16 px-4 bg-gradient-to-br from-[#F0F9F4] via-[#E6F8EC] to-white overflow-hidden">
+    <main className="relative min-h-screen md:py-32 py-44 px-4 bg-gradient-to-br from-[#F0F9F4] via-[#E6F8EC] to-white overflow-hidden">
       {/* Decorative Background Blobs */}
       <div
         className="pointer-events-none absolute -top-12 -left-16 w-72 h-72 rounded-full bg-[#B1D8B7] opacity-25 blur-3xl z-0"

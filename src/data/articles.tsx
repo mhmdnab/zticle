@@ -19,7 +19,7 @@ export const articles: Article[] = [
     coverImage: "/images/burnout.png",
     author: "Jordan Lee",
     html: `
-    <h2 class="text-2xl font-bold mb-4">Say “Bye” to Hustle Porn</h2>
+    <h2 class="text-2xl font-bold mb-4">Let’s End the Grind Obsession</h2>
   <p class="mb-6">
     From 24/7 side hustles to “rise and grind” tweets—we’ve been sold the hustle
     pipe dream. Let’s unpack how burnout sneaks up and what to do about it.

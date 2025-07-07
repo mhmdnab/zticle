@@ -20,7 +20,7 @@ export default function AboutPage() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="relative flex flex-col items-center justify-center min-h-[45vh] px-4 py-16 bg-gradient-to-br from-[#B1D8B7] via-[#94C973] to-[#B1D8B7]">
+      <section className="relative flex flex-col items-center justify-center min-h-[95vh] px-4 py-16 bg-gradient-to-br from-[#B1D8B7] via-[#94C973] to-[#B1D8B7]">
         {/* Decorative Blobs */}
         <div
           className="absolute top-10 left-10 w-24 h-24 rounded-full bg-[#76B947] opacity-20 blur-2xl pointer-events-none"

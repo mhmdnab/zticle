@@ -24,7 +24,18 @@ export default function DailyPoll() {
       const docRef = doc(db, "polls", POLL_ID);
       const pollSnap = await getDoc(docRef);
       if (pollSnap.exists()) {
-        setPoll(pollSnap.data() as PollType);
+        let data = pollSnap.data() as PollType;
+        // --- Fix: convert votes object to array if needed ---
+        if (data.votes && !Array.isArray(data.votes)) {
+          // Convert {0: 2, 1: 3} to [2, 3]
+          data = {
+            ...data,
+            votes: Object.keys(data.votes)
+              .sort()
+              .map((k: any) => data.votes[k]),
+          };
+        }
+        setPoll(data);
       }
       setLoading(false);
       if (

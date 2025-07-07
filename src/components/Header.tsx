@@ -6,33 +6,40 @@ import logo from "../../public/images/logoNOBG.png";
 
 export default function Header() {
   return (
-    <header className="bg-[#B1D8B7] p-2 ">
-      {/* Main card: pill on desktop, glass card on mobile */}
+    <header
+      className="
+    fixed top-4 left-1/2 transform -translate-x-1/2
+    z-50
+    w-[95vw] max-w-5xl
+    bg-transparent
+  "
+    >
       <div
         className="
-          max-w-6xl mx-auto
-          flex flex-col items-center
-          md:flex-row md:justify-between md:items-center
-          bg-[#EAF6EE]/95
-          rounded-[2.5rem]
-          shadow-xl
-          border border-[#B1D8B7]/80
-          px-5 md:px-4 py-3
-          mt-2
-          "
+      max-w-6xl mx-auto
+      flex flex-col items-center
+      md:flex-row md:justify-between md:items-center
+      bg-[#EAF6EE]/35
+      backdrop-blur-md
+      rounded-[2.5rem]
+      shadow-xl
+      border border-[#B1D8B7]/80
+      px-5 md:px-4 py-3
+      mt-2
+    "
         style={{
           transition: "box-shadow 0.25s",
         }}
       >
-        {/* Logo top center on mobile, left on desktop */}
+        {/* Logo */}
         <Link
           href="/"
           className="
-            flex items-center
-            mb-2 md:mb-0
-            mx-auto md:mx-0
-            justify-center
-          "
+        flex items-center
+        mb-2 md:mb-0
+        mx-auto md:mx-0
+        justify-center
+      "
         >
           <Image
             src={logo}
@@ -43,14 +50,14 @@ export default function Header() {
           />
         </Link>
 
-        {/* Nav links: centered in a row on mobile, right row on desktop */}
+        {/* Nav links */}
         <nav
           className="
-            flex flex-row items-center
-            justify-center
-            space-x-4 md:space-x-8
-            w-full md:w-auto
-          "
+        flex flex-row items-center
+        justify-center
+        space-x-4 md:space-x-8
+        w-full md:w-auto
+      "
         >
           <HeaderLink href="/about">About</HeaderLink>
           <HeaderLink href="/articles">Articles</HeaderLink>
@@ -75,7 +82,7 @@ function HeaderLink({
         relative px-4 py-1 rounded-full text-[#2F5233] font-semibold text-lg transition
         before:content-[''] before:absolute before:inset-x-3 before:bottom-0 before:h-1 before:rounded-full
         before:bg-[#94C973] before:scale-x-0 before:transition-transform before:duration-200
-        hover:before:scale-x-100 hover:bg-[#E6F8EC] hover:shadow
+        hover:before:scale-x-100
         block
       `}
       style={{

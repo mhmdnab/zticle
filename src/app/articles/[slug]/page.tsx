@@ -16,7 +16,7 @@ export default async function ArticlePage({ params }: any) {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-tr from-[#94C973] to-[#4c8453] py-12 px-4">
+    <div className="min-h-screen bg-gradient-to-tr from-[#94C973] to-[#4c8453] md:py-32 py-44 px-4">
       <div className="max-w-2xl mx-auto bg-white/80 rounded-3xl overflow-hidden shadow-lg border-2 border-[#76B947]">
         {/* Header strip */}
         <div className="px-8 py-6 bg-[#76B947]/30">
