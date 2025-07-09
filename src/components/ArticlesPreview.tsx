@@ -31,10 +31,10 @@ export default function ArticlesPreview() {
       <div className="relative z-20 w-full flex flex-col items-center">
         {/* Header with glass effect */}
         <div className="backdrop-blur-md bg-[#2F5233]/40 rounded-3xl px-8 py-6 mb-8 flex flex-col items-center max-w-3xl shadow-lg border border-[#76B947]/50">
-          <h2 className="text-4xl font-extrabold text-[#B1D8B7] mb-2 drop-shadow">
+          <h2 className="md:text-4xl text-3xl text-center font-extrabold text-[#B1D8B7] mb-2 drop-shadow">
             Latest Articles
           </h2>
-          <p className="text-lg font-medium text-[#B1D8B7]/80 text-center max-w-2xl">
+          <p className="md:text-lg text-md font-medium text-[#B1D8B7]/80 text-center max-w-2xl">
             Check out our freshest Gen Z takes on life, wellness, money moves,
             and more. Dive in!
           </p>

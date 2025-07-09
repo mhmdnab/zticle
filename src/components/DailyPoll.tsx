@@ -4,7 +4,19 @@ import { useState, useEffect } from "react";
 import { doc, getDoc, updateDoc, increment } from "firebase/firestore";
 import { db } from "@/lib/firebase"; // Adjust if your path is different
 
-const POLL_ID = "poll2"; // Your Firestore doc ID
+const TOTAL_POLLS = 5;
+
+function getTodayPollId() {
+  const now = new Date();
+  const start = new Date(now.getFullYear(), 0, 0);
+  const diff = now.getTime() - start.getTime();
+  const oneDay = 1000 * 60 * 60 * 24;
+  const dayOfYear = Math.floor(diff / oneDay);
+  const pollNumber = ((dayOfYear - 1) % TOTAL_POLLS) + 1;
+  return `poll${pollNumber}`;
+}
+
+const POLL_ID = getTodayPollId();
 
 type PollType = {
   question: string;
