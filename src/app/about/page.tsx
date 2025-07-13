@@ -1,5 +1,6 @@
 // app/about/page.tsx
 import React from "react";
+import AdBanner from "../../components/Adbanner";
 
 const authors = [
   {
@@ -78,6 +79,9 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      <div className="flex justify-center my-8">
+        <AdBanner />
+      </div>
 
       {/* Meet the Authors */}
       <section className="w-full bg-[#2F5233] py-16">

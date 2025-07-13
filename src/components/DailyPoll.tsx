@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { doc, getDoc, updateDoc, increment } from "firebase/firestore";
 import { db } from "@/lib/firebase"; // Adjust if your path is different
 
-const TOTAL_POLLS = 5;
+const TOTAL_POLLS = 8;
 
 function getTodayPollId() {
   const now = new Date();
