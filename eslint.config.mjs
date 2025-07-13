@@ -22,5 +22,14 @@ export default [
       "react/no-unescaped-entities": "off",
       "@next/next/no-img-element": "off",
     },
+    "@typescript-eslint/ban-ts-comment": [
+      "error",
+      {
+        "ts-expect-error": "allow-with-description",
+        "ts-ignore": true,
+        "ts-nocheck": true,
+        "ts-check": false,
+      },
+    ],
   },
 ];
