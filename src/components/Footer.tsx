@@ -2,9 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { FaFacebook, FaLinkedinIn } from "react-icons/fa";
+import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { RiTwitterXLine } from "react-icons/ri";
 import logo from "../../public/images/logoNOBG.png";
+import { FaThreads } from "react-icons/fa6";
 
 export default function Footer() {
   return (
@@ -18,25 +19,25 @@ export default function Footer() {
 
         <div className="flex space-x-4">
           <a
-            href="https://facebook.com"
+            href="https://instagram.com/zticle"
             aria-label="Facebook"
             className="hover:text-gray-800"
           >
-            <FaFacebook />
+            <FaInstagram />
           </a>
           <a
-            href="https://twitter.com"
+            href="https://x.com/zzzticle"
             aria-label="Twitter"
             className="hover:text-gray-800"
           >
             <RiTwitterXLine />
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.threads.com/@zticle"
             aria-label="LinkedIn"
             className="hover:text-gray-800"
           >
-            <FaLinkedinIn />
+            <FaThreads />
           </a>
         </div>
       </div>
