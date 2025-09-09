@@ -23,7 +23,7 @@ export default [
       "@typescript-eslint/ban-ts-comment": [
         "error",
         {
-          "ts-expect-error": "allow-with-description",
+          "ts-expect-error": "allow-without-description", // ← was allow-with-description
           "ts-ignore": true,
           "ts-nocheck": true,
           "ts-check": false,
