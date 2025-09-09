@@ -2,6 +2,7 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { articles } from "../../../data/articles";
+import Comments from "@/components/comments/Comments";
 
 export function generateStaticParams() {
   return articles.map((article) => ({
@@ -46,6 +47,8 @@ export default async function ArticlePage({ params }: any) {
           />
         </div>
       </div>
+      {/* BELOW THIS THE COMMENT SECTION*/}
+      <Comments slug={params.slug} />
     </div>
   );
 }
