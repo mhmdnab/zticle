@@ -40,3 +40,11 @@ https://particle.news/blog/particle-upgrades-dynamic-news-app-with-more-customiz
 Production build passed, including lint, TypeScript and static generation of 18 pages/routes. Browser checked the homepage and article navigation, switched summary style, toggled bookmark, and verified audio enters playback state and can be stopped. Cross-device voice quality and mobile browser audio remain to be tested.
 
 `npm ci` reported 30 dependency vulnerabilities (4 critical, 22 high, 3 moderate, 1 low). Resolve and retest before public deployment.
+
+## Security dependency update — 17 October 2026
+
+Updated Next.js from 15.3.4 to 15.5.28 (the patched 15.x release specified in the 14 October Next.js security update), React/React DOM to 19.3.1, and eslint-config-next to 15.5.28. The image dependency is now sharp 0.35.5. Applied compatible npm audit fixes for transitive dependencies without forcing major-version changes.
+
+The resulting npm audit reports no critical findings, with 14 remaining advisories (13 high, 1 moderate). Outstanding findings include Firebase/gRPC, Nodemailer, tooling/glob dependencies, and Next.js's transitive PostCSS dependency; several remediation paths require major-version changes. This update addresses the vulnerable Next.js version shown in the Vercel deployment failure, but is not a claim that all dependencies are vulnerability-free.
+
+Official release: https://nextjs.org/blog/nextjs-security-update-october-14-2026
