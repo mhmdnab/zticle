@@ -1,54 +1,11 @@
-// app/articles/[slug]/page.jsx
-import { notFound } from "next/navigation";
-import Image from "next/image";
-import { articles } from "../../../data/articles";
-import Comments from "@/components/comments/Comments";
-
-export function generateStaticParams() {
-  return articles.map((article) => ({
-    slug: article.slug,
-  }));
-}
-
-export default async function ArticlePage({ params }: any) {
-  const article = articles.find((a) => a.slug === params.slug);
-  if (!article) {
-    notFound();
-  }
-
-  return (
-    <div className="min-h-screen bg-gradient-to-tr from-[#94C973] to-[#4c8453] md:py-32 py-44 px-4">
-      <div className="max-w-2xl mx-auto bg-white/80 rounded-3xl overflow-hidden shadow-lg border-2 border-[#76B947]">
-        {/* Header strip */}
-        <div className="px-8 py-6 bg-[#76B947]/30">
-          <h1 className="text-4xl font-bold text-[#2F5233]">{article.title}</h1>
-          <p className="mt-3 text-sm text-[#2F5233]">
-            {new Date(article.publishedAt).toLocaleDateString()}
-          </p>
-        </div>
-
-        <div className="px-8 py-6 space-y-6">
-          {/* Cover image */}
-          {article.coverImage && (
-            <Image
-              src={article.coverImage}
-              alt={article.title}
-              width={800}
-              height={400}
-              className="w-full rounded-2xl shadow-md ring-4 ring-[#B1D8B7]/40"
-            />
-          )}
-
-          {/* Body */}
-          <div
-            className="prose prose-lg text-[#2F5233] prose-a:text-[#76B947] hover:prose-a:text-[#94C973]"
-            style={{ lineHeight: 1.8 }}
-            dangerouslySetInnerHTML={{ __html: article.html }}
-          />
-        </div>
-      </div>
-      {/* BELOW THIS THE COMMENT SECTION*/}
-      <Comments slug={params.slug} />
-    </div>
-  );
+import { notFound } from 'next/navigation';
+import Link from 'next/link';
+import { getArticle } from '@/lib/content';
+import { topic, readTime } from '@/lib/editorial';
+import ReadingTools from '@/components/ReadingTools';
+export const dynamic = 'force-dynamic';
+export async function generateMetadata({params}: {params: Promise<{slug:string}>}) {const {slug}=await params; const a=await getArticle(slug);return {title:a ? `${a.title} — Zticle` : 'Story not found',description:a?.description};}
+export default async function ArticlePage({params}: {params: Promise<{slug:string}>}) {
+ const {slug}=await params;const a=await getArticle(slug);if(!a) notFound();
+ return <main className="article-page"><Link href="/articles" className="back-link">← Back to the good stuff</Link><div className="eyebrow orange">{topic(a)} · {readTime(a)} MIN READ</div><h1>{a.title}</h1><p className="article-deck">{a.description}</p><div className="byline">By {a.author || 'The Zticle team'} <span>· {new Date(a.publishedAt).toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'})}</span></div><img className="article-cover" src={a.coverImage} alt={a.coverAlt || a.title}/><ReadingTools article={a}/><div className="article-body" dangerouslySetInnerHTML={{__html:a.html}}/><div className="article-end">✳<p>Something to think about. Something to pass on.</p><Link href="/articles">Find your next read ↗</Link></div></main>;
 }

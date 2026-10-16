@@ -3,9 +3,6 @@ import mongoose from "mongoose";
 
 const MONGODB_URI = process.env.MONGODB_URI!;
 
-if (!MONGODB_URI) {
-  throw new Error("Please set MONGODB_URI in .env.local");
-}
 
 let cached = (global as any).mongoose;
 
@@ -14,6 +11,7 @@ if (!cached) {
 }
 
 export async function connectToDB() {
+  if (!MONGODB_URI) throw new Error("Please set MONGODB_URI in .env.local");
   if (cached.conn) return cached.conn as typeof mongoose;
   if (!cached.promise) {
     cached.promise = mongoose.connect(MONGODB_URI, {

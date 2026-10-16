@@ -1,6 +1,9 @@
 // data/articles.ts
 export interface Article {
   slug: string;
+  category?: string;
+  coverAlt?: string;
+  updatedAt?: string;
   title: string;
   description: string;
   publishedAt: string;

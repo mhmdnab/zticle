@@ -4,8 +4,8 @@ import { useEffect } from "react";
 export default function AdBanner() {
   useEffect(() => {
     try {
-      // @ts-ignore
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
+      const adWindow = window as Window & { adsbygoogle?: object[] };
+      (adWindow.adsbygoogle = adWindow.adsbygoogle || []).push({});
     } catch (e) {}
   }, []);
 
