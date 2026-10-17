@@ -1,17 +1,31 @@
-# Zticle Studio connection
+# Shared publishing backend
 
-The separate single-owner dashboard lives in the sibling `zticle-studio` repository. Start it with `npm start` on port 3100 and create your admin password in its first-run screen.
+The public website and the separate Next.js dashboard (`zticle-studio`) use the same `zticle-api` backend, deployed at https://zticle-api.onrender.com. The backend stores articles, media, and authentication data in Neon PostgreSQL.
 
-The public website now reads `src/lib/content.ts` rather than importing fixture articles directly into the feed. Set this server-only environment variable:
+## Public website on Vercel
+
+Set this server-only variable in the `zticle` project's Production environment, then redeploy:
 
 ```dotenv
-CONTENT_API_URL=http://127.0.0.1:3100/api/public/articles
+CONTENT_API_URL=https://zticle-api.onrender.com/api/public/articles
 ```
 
-Restart Next.js after changing the environment. For production, point it at the Studio's HTTPS domain. The website uses dynamic routes and uncached server-side requests. Drafts never enter the published feed, and unpublished stories return 404. If a configured service is unavailable, show a retry state instead of resurrecting old fixture articles. Without configuration, the original ten articles remain the fallback library.
+The website fetches published articles without caching. Publishing, editing, or unpublishing in the dashboard is reflected on the next website request without rebuilding. Drafts stay out of the public feed. If a configured API is unavailable, the website shows a retry state. Without configuration, it uses the original fixture articles.
 
-Studio owns article category, byline, original publication date, title, description, safe rendered HTML, cover and alt text. Uploaded assets remain on the Studio host; keep its database and media on a persistent disk. The dashboard repository contains the complete setup, backup, reset-password and deployment instructions.
+## Dashboard on Vercel
 
-There is no shared Git history, package dependency or Git submodule between the two apps. Deploy them separately. No remote GitHub repository or public deployment has been created.
+Set these server-only variables in the `zticle-studio` project's Production environment, then redeploy:
 
-Verification: production build passed lint, TypeScript and route generation with Studio configured. The isolated Studio tests passed authentication, cross-origin write rejection, draft isolation, duplicate URL rejection, validation, publish/unpublish, conflict detection, Markdown escaping, upload validation and persistence. Browser QA created and saved a draft, confirmed the reader showed 404, previewed the body, published it and saw the complete article on the reader without rebuilding, then unpublished it and confirmed 404 again. Disposable QA records were never added to the actual Studio database.
+```dotenv
+API_URL=https://zticle-api.onrender.com
+APP_ORIGIN=https://zticle-studio.vercel.app
+STUDIO_API_SECRET=<same value as the API service>
+```
+
+The dashboard proxies requests to the backend and keeps the shared secret on the server. Do not prefix these variables with `NEXT_PUBLIC_` or commit secret values.
+
+## Backend on Render
+
+Configure `DATABASE_URL` with the Neon connection string, `API_ORIGIN=https://zticle-api.onrender.com`, `STUDIO_ORIGIN=https://zticle-studio.vercel.app`, `PUBLIC_SITE_URL=https://zticle.vercel.app`, and the matching `STUDIO_API_SECRET`. Backend media is stored in PostgreSQL.
+
+The three repositories deploy independently. For local development, `CONTENT_API_URL` can point at a locally running API or the dashboard's public feed proxy.

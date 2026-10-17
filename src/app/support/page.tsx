@@ -1,0 +1,21 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { FiHeadphones, FiBookmark, FiMessageCircle, FiArrowUpRight } from 'react-icons/fi';
+import SupportForm from '@/components/SupportForm';
+export const metadata:Metadata={title:'Support — Zticle',description:'Get help with reading, saved stories, and audio on Zticle. Report an issue, suggest an article, or send feedback.'};
+const questions=[
+ ['How do I listen to an article?', 'Open a story and select Read aloud. You can pause, resume, stop, and change the speed using the reading controls. Keep the page open while listening. Available voices and audio behavior depend on your browser and device.'],
+ ['Why can’t I hear the read aloud voice?', 'Check your device volume and audio output, then press play again. If your browser does not support speech playback or has no available voice, try another browser.'],
+ ['How do article summaries work?', 'Choose a quick take, key points, or one sentence from the summary controls on an article. These summaries use excerpts from the article. Open the full story for the complete context.'],
+ ['Where are my saved stories?', 'Use the bookmark on any story, then open Saved stories in the navigation. Bookmarks are stored in this browser, so they do not sync between devices and may disappear if you clear browser data or use private browsing.'],
+ ['Do I need an account or subscription?', 'You can read articles, use the reading tools, and save stories without an account or subscription.'],
+ ['An article won’t load. What should I do?', 'Check your connection and try again after a moment. If the issue continues, send us the article link, your browser, and what you see using the form below.'],
+ ['How do I report a correction or suggest a story?', 'Choose Article correction or Story suggestion in the form below. For a correction, include the article link, the relevant passage, and a source if you have one.'],
+];
+export default function SupportPage(){return <main className="feed-shell support-page">
+ <section className="support-hero"><div><span className="eyebrow"><span className="live-dot"/> A LITTLE HELP GOES A LONG WAY</span><h1>Less stuck.<br/>More <em>sorted.</em></h1><p>Need a hand, spotted a mistake, or have an idea? You’re in the right place.</p><a className="solid-link" href="#contact-support">Talk to us <FiArrowUpRight/></a></div><aside className="support-note"><span aria-hidden="true">✳</span><h2>Here for the questions.</h2><p>Start with a quick answer below. If that doesn’t do it, send us a message.</p><a href="#support-faq">Find an answer ↓</a></aside></section>
+ <section className="support-topics" aria-label="Help topics">{[[FiHeadphones,'Reading & listening','Audio, summaries, and your reading experience.','#support-faq'],[FiBookmark,'Saved stories','Keep your favorites close. Find out where they live.','#saved-help'],[FiMessageCircle,'Ideas & feedback','A story suggestion, a correction, or something new.','#contact-support']].map(([Icon,title,description,href])=>{const HelpIcon=Icon as typeof FiHeadphones;return <a href={href as string} key={title as string}><HelpIcon/><h2>{title as string}</h2><p>{description as string}</p><span>Let’s sort it out ↗</span></a>;})}</section>
+ <section className="support-faq" id="support-faq"><div><span className="eyebrow">THE QUICK ANSWERS</span><h2>A good place<br/>to start<span className="orange">.</span></h2><p>No digging through a help center required.</p></div><div>{questions.map(([q,a],i)=><details key={q} id={i===3?'saved-help':undefined}><summary>{q}</summary><p>{a}</p></details>)}</div></section>
+ <section id="contact-support" className="support-contact"><div><span className="eyebrow">YOUR TURN</span><h2>We’re listening.</h2><p>Tell us what’s working, what isn’t, or what you wish we’d write about next.</p><div className="support-tip"><span aria-hidden="true">↗</span><p>A little context helps. For technical issues, tell us your device and browser so we can understand what you’re seeing.</p></div><Link href="/about">Meet the people behind Zticle ↗</Link></div><div><SupportForm/></div></section>
+ <section className="closing-note"><span>✳</span><h2>Back to something good.</h2><Link href="/articles">Explore the stories <FiArrowUpRight/></Link></section>
+ </main>;}

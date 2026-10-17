@@ -5,7 +5,13 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Zticle — Stay curious. Share perspective.",
-  icons: { icon: "/favicon.ico" },
+  icons: {
+    icon: [
+      { url: "/favicon.ico?v=2", sizes: "16x16 32x32 48x48" },
+      { url: "/favicon.svg?v=2", type: "image/svg+xml" },
+    ],
+    apple: { url: "/apple-touch-icon.png?v=2", sizes: "180x180", type: "image/png" },
+  },
   description: "Stories for the curious generation. Explore culture, wellbeing, money and digital life, with quick summaries and read aloud.",
 };
 

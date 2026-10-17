@@ -1,124 +1,21 @@
-// app/about/page.tsx
-import React from "react";
-import AdBanner from "../../components/Adbanner";
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { FiArrowUpRight, FiHeadphones, FiBookmark, FiMessageCircle } from 'react-icons/fi';
 
-const authors = [
-  {
-    name: "Mohamad Naboulsi",
-    role: "Co-Founder",
-    initial: "M",
-    star: true,
-  },
-  {
-    name: "Adam Naboulsi",
-    role: "Co-Founder",
-    initial: "A",
-    star: true,
-  },
+export const metadata: Metadata = { title: 'Our story — Zticle', description: 'Meet the people and ideas behind Zticle. Stories about culture, wellbeing, money, work, and life online for a curious generation.' };
+const principles = [
+ ['01', 'Curiosity over certainty.', 'Good stories make room for questions. We explore the ideas shaping our lives without pretending there is one answer for everyone.'],
+ ['02', 'Your time matters.', 'Clear language, useful context, and a point worth taking away. Read the whole thing or start with the gist.'],
+ ['03', 'A conversation, not a lecture.', 'We want to give you something to think about, disagree with, or send to a friend. You bring your own perspective.'],
 ];
-
 export default function AboutPage() {
-  return (
-    <main>
-      {/* Hero Section */}
-      <section className="relative flex flex-col items-center justify-center min-h-[95vh] px-4 py-16 bg-gradient-to-br from-[#B1D8B7] via-[#94C973] to-[#B1D8B7]">
-        {/* Decorative Blobs */}
-        <div
-          className="absolute top-10 left-10 w-24 h-24 rounded-full bg-[#76B947] opacity-20 blur-2xl pointer-events-none"
-          aria-hidden="true"
-        />
-        <div
-          className="absolute bottom-10 right-10 w-32 h-32 rounded-full bg-[#2F5233] opacity-10 blur-3xl pointer-events-none"
-          aria-hidden="true"
-        />
-        {/* Content */}
-        <div className="relative z-10 text-center max-w-3xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-[#2F5233] mb-6 drop-shadow">
-            About Zticle
-          </h1>
-          <p className="text-[#2F5233]/90 text-lg md:text-xl font-medium">
-            We’re the Gen Z newsroom that keeps it real—no corporate fluff, no
-            jargon.
-            <br />
-            <span className="text-[#2F5233]/80 font-normal">
-              Zticle is your daily scroll of micro-articles on culture, tech,
-              mental health, hustle hacks and hot takes. We speak your language
-              (TikTok energy included) and serve up bite-sized reads that stick.
-            </span>
-          </p>
-        </div>
-      </section>
-
-      {/* Mission & Vision Section */}
-      <section className="w-full bg-white py-10 px-2">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8">
-          {/* Mission */}
-          <div className="flex-1 bg-[#B1D8B7] bg-opacity-70 rounded-2xl shadow-md p-7">
-            <h2 className="text-2xl font-bold text-[#2F5233] mb-2">
-              Our Mission
-            </h2>
-            <p className="text-[#2F5233]/80 font-medium">
-              To equip every twenty-something with high-voltage insights and
-              zero BS. We craft snackable, scroll-ready content that helps you
-              level up your life and career—while having fun on the way. Learn
-              fast, think sharp, live loud.
-            </p>
-          </div>
-          {/* Vision */}
-          <div className="flex-1 bg-[#94C973] bg-opacity-70 rounded-2xl shadow-md p-7">
-            <h2 className="text-2xl font-bold text-[#2F5233] mb-2">
-              Our Vision
-            </h2>
-            <p className="text-[#2F5233]/80 font-medium">
-              A world where learning doesn’t feel like homework. We want Zticle
-              to be the digital hangout for Gen Z creators, rebels, and curious
-              minds—where every click feels like chatting with your smartest
-              friend. Together, we build a community that’s bold, supportive,
-              and forever curious.
-            </p>
-          </div>
-        </div>
-      </section>
-      <div className="flex justify-center my-8">
-        <AdBanner />
-      </div>
-
-      {/* Meet the Authors */}
-      <section className="w-full bg-[#2F5233] py-16">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-12 text-center">
-            Meet the Authors
-          </h2>
-          <div className="flex flex-col md:flex-row gap-8 justify-center items-center">
-            {authors.map((author) => (
-              <div
-                key={author.name}
-                className="bg-white rounded-2xl shadow-xl flex flex-col items-center p-8 min-w-[230px] max-w-xs w-full"
-              >
-                <div className="relative mb-4">
-                  <div className="bg-[#B1D8B7] text-[#2F5233] text-4xl font-bold w-20 h-20 rounded-full flex items-center justify-center">
-                    {author.initial}
-                  </div>
-                  {author.star && (
-                    <span
-                      className="absolute top-0 right-0 text-[#76B947] text-2xl"
-                      title="Co-Founder"
-                    >
-                      ⭐
-                    </span>
-                  )}
-                </div>
-                <h3 className="text-xl font-semibold text-[#2F5233] mb-1">
-                  {author.name}
-                </h3>
-                <span className="text-[#76B947] italic text-base">
-                  {author.role}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    </main>
-  );
+ return <main className="feed-shell about-page">
+  <section className="about-hero"><div><span className="eyebrow"><span className="live-dot"/> THE STORY BEHIND THE STORIES</span><h1>For a generation<br/>with <em>questions.</em></h1><p>The internet has plenty to say. We’re here to help you find something worth thinking about.</p><Link className="solid-link" href="/articles">Find your next read <FiArrowUpRight/></Link></div><div className="manifesto-card"><span aria-hidden="true">✳</span><p>Read something.<br/>Feel something.<br/>See it differently.</p><small>A LITTLE PERSPECTIVE GOES A LONG WAY.</small></div></section>
+  <section className="about-story"><span className="eyebrow">WHY WE EXIST</span><div><h2>Life doesn’t come with a syllabus.</h2><p>Friendships change. Work gets complicated. Money feels confusing. Culture moves fast, and the group chat never sleeps.</p><p>Zticle is a place to pause and make sense of some of it. We share articles about culture, wellbeing, money, work, and digital life: the things you’re already talking about and the questions you haven’t found words for yet.</p><p>Built for Gen Z, open to anyone curious. Stay for a quick read. Leave with a fresh perspective.</p></div></section>
+  <section className="about-section"><span className="eyebrow">WHAT WE CARE ABOUT</span><h2>Our kind of energy<span className="orange">.</span></h2><div className="principle-grid">{principles.map(([n,title,copy])=><article key={n}><span className="orange">{n} /</span><h3>{title}</h3><p>{copy}</p></article>)}</div></section>
+  <section className="reading-promise"><div><span className="eyebrow">MAKE IT YOURS</span><h2>Different day.<br/>Different way to read.</h2><Link href="/articles">Try it on a story <FiArrowUpRight/></Link></div><div className="promise-list"><article><FiHeadphones/><div><h3>Take a story on a walk</h3><p>Read aloud with pause, resume, and speed controls. Available voices depend on your browser.</p></div></article><article><FiMessageCircle/><div><h3>Start with the gist</h3><p>Choose a quick take, key points, or one sentence. Summaries are drawn from the article so you can decide what to read next.</p></div></article><article><FiBookmark/><div><h3>Keep the good ones close</h3><p>Bookmark stories for later on this browser, or share an article link with your people.</p></div></article></div></section>
+  <section className="about-section"><span className="eyebrow">THE PEOPLE BEHIND ZTICLE</span><h2>Small team. Curious minds.</h2><div className="founder-grid">{['Mohamad Naboulsi','Adam Naboulsi'].map((name,i)=><article key={name}><span className="founder-initial" aria-hidden="true">{i===0?'M':'A'}</span><div><h3>{name}</h3><p>Co-founder</p></div><span className="orange" aria-hidden="true">✳</span></article>)}</div></section>
+  <section className="about-faq"><div><span className="eyebrow">A FEW GOOD QUESTIONS</span><h2>Before you go.</h2></div><div>{[['Do I need an account?', 'No account is needed to read, listen, or use article summaries. Saved stories stay in your current browser.'],['What do you cover?', 'Culture, wellbeing, money, work and life, and digital life. Browse the topic collections to find your corner.'],['How can I suggest a story or flag a mistake?', 'Use our contact page to send a topic, feedback, or a correction. Include the article link and relevant details so we can look into it.']].map(([q,a])=><details key={q}><summary>{q}</summary><p>{a}</p></details>)}<Link href="/contact" className="text-button">Get in touch ↗</Link></div></section>
+  <section className="closing-note"><span>✳</span><h2>Your next “wait, read this”<br/>starts here.</h2><Link href="/articles">Explore the stories <FiArrowUpRight/></Link></section>
+ </main>;
 }
